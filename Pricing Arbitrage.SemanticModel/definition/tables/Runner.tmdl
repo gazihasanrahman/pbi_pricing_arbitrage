@@ -1,0 +1,83 @@
+table Runner
+	lineageTag: 4306d299-8050-47f8-9f27-3e13114f1bee
+
+	column runner_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9165fc51-165b-47d8-b555-aa660830e5a4
+		summarizeBy: sum
+		sourceColumn: runner_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column race_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6adb9e1f-cddb-45a9-bc32-0ef239e499d3
+		summarizeBy: none
+		sourceColumn: race_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column runner_number
+		dataType: string
+		lineageTag: 24eebf79-331a-4636-8f4e-cfa3c1b97ebb
+		summarizeBy: none
+		sourceColumn: runner_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column finish_position
+		dataType: int64
+		formatString: 0
+		lineageTag: 97ea1ae2-290f-4570-9f89-44237b0dcd39
+		summarizeBy: sum
+		sourceColumn: finish_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column finish_time
+		dataType: double
+		lineageTag: 8921abf5-579e-490d-b1bf-a3e6d94e5199
+		summarizeBy: sum
+		sourceColumn: finish_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column horse_name
+		dataType: string
+		lineageTag: d04d6424-b7cd-4696-999f-8f8c802a3661
+		summarizeBy: none
+		sourceColumn: horse_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gmax_runner_sharecode
+		dataType: string
+		lineageTag: 1a1dda87-1ba7-4209-bff3-3684f17c3cb6
+		summarizeBy: none
+		sourceColumn: gmax_runner_sharecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column rsc_with_fp = CONCATENATE(CONCATENATE(Runner[gmax_runner_sharecode],"-"),Runner[finish_position])
+		lineageTag: f5bbbb9f-b1fd-4272-bbb5-4c624dfdc0b3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Runner = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("general-mariadb-1-read.cqqnayulzicg.eu-west-2.rds.amazonaws.com", "general", [Query="select#(lf)runner.runner_id,#(lf)runner.race_id,#(lf)runner.runner_number,#(lf)runner.finish_position,#(lf)runner.finish_time,#(lf)runner.horse_name,#(lf)runner.gmax_runner_sharecode#(lf)from tpd.runner#(lf)where runner.gmax_runner_sharecode is not null#(lf)group by runner.gmax_runner_sharecode#(lf);", CreateNavigationProperties=false, ReturnSingleDatabase=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"finish_position", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,25 +1,27 @@
-relationship 4a019abf-76a1-4dd7-9ebd-7f3d3d6d53de
-	fromColumn: 'TPD Meeting'.'Meeting Date'
-	toColumn: LocalDateTable_e5903425-66dc-4941-a247-8ec8ee015908.Date
-
-relationship 0ee45e35-d8a9-4311-9a13-ec9875ca2e5f
-	fromColumn: 'TPD Meeting'.'TPD Course ID'
-	toColumn: 'TPD Course'.'TPD Course ID'
-
-relationship fa6f0638-5988-462b-8f7b-2508b00418fe
-	fromColumn: 'TPD Race'.'Post Time'
-	toColumn: LocalDateTable_01981014-986b-4d10-a6f6-92650cdd4519.Date
-
-relationship 139d16a9-d3ac-486e-9cfb-7c1cebf07baf
-	fromColumn: 'TPD Race'.'TPD Meeting ID'
-	toColumn: 'TPD Meeting'.'TPD Meeting ID'
-
-relationship e8189747-d7d8-467e-b661-a2a07f924345
-	fromColumn: 'TPD Runner'.'TPD Race ID'
-	toColumn: 'TPD Race'.'TPD Race ID'
-
 relationship b18e25be-a6b2-4a69-9848-efa3995cca2e
 	joinOnDateBehavior: datePartOnly
 	fromColumn: 'Pricing Comparison'.price_time
 	toColumn: LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c.Date
+
+relationship d2610296-be8a-4da5-a1a1-25ca38c57e91
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Meeting.meeting_date
+	toColumn: LocalDateTable_5387d7f7-ed7e-4a8a-a1ff-97c2afc1ea5b.Date
+
+relationship eb66d700-e396-4949-8335-4ca5c9c0fe93
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Race.post_time_utc
+	toColumn: LocalDateTable_2a92377b-e261-40b2-8925-2906340ec109.Date
+
+relationship AutoDetected_eb93bf6d-f64f-431e-bbea-6659c0e4ebc9
+	fromColumn: 'Pricing Comparison'.gmax_runner_sharecode
+	toColumn: Runner.gmax_runner_sharecode
+
+relationship AutoDetected_acf79c98-0ef1-4a07-beaf-a90a2d3990e6
+	fromColumn: Race.meeting_id
+	toColumn: Meeting.meeting_id
+
+relationship AutoDetected_fb4f5faa-5242-4743-9ef9-be6cebf93776
+	fromColumn: Runner.race_id
+	toColumn: Race.race_id
 

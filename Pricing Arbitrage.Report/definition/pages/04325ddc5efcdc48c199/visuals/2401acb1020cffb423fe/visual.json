@@ -1,0 +1,364 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "2401acb1020cffb423fe",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 1000,
+    "height": 720,
+    "width": 263.91681109185441
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Meeting"
+                    }
+                  },
+                  "Property": "racecourse"
+                }
+              },
+              "queryRef": "Meeting.racecourse",
+              "nativeQueryRef": "racecourse",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "gmax_race_sharecode"
+                }
+              },
+              "queryRef": "Pricing Comparison.gmax_race_sharecode",
+              "nativeQueryRef": "gmax_race_sharecode",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runner"
+                    }
+                  },
+                  "Property": "rsc_with_fp"
+                }
+              },
+              "queryRef": "Runner.rsc_with_fp",
+              "nativeQueryRef": "rsc_with_fp",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pricing Comparison"
+                        }
+                      },
+                      "Property": "price_time"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(Pricing Comparison.price_time)",
+              "nativeQueryRef": "incidents",
+              "displayName": "incidents"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Meeting.racecourse"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Meeting"
+                    }
+                  },
+                  "Property": "racecourse"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pricing Comparison.gmax_race_sharecode"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "gmax_race_sharecode"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Runner.rsc_with_fp"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Lingfield'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'30202510141400'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Newcastle'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'35202510141725'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Brighton'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'06202510161455'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Ascot'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'01202510181525'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "83.16929767683962D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Pricing Comparison.price_m1_2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.09362619177625D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Pricing Comparison.price_true)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "189.83326450453723D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Meeting.racecourse"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "330bbe14ba7199a2f12b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Meeting"
+              }
+            },
+            "Property": "racecourse"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9d9f9816038a29a9f631",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "gmax_race_sharecode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "79b9ced25f854985817d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pricing Comparison"
+                  }
+                },
+                "Property": "price_time"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "43dc40340835c0c8f5c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Runner"
+              }
+            },
+            "Property": "rsc_with_fp"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

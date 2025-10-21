@@ -10,65 +10,52 @@
       "nodes": [
         {
           "location": {
-            "x": 1482.5758247964934,
-            "y": 431.6681841980012
-          },
-          "nodeIndex": "TPD Course",
-          "nodeLineageTag": "eedf344c-bb19-4dbb-bb82-866ac3b03d02",
-          "size": {
-            "height": 296,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1197.0148796183507,
-            "y": 313.88329843222721
-          },
-          "nodeIndex": "TPD Meeting",
-          "nodeLineageTag": "5f06590c-e4af-49e8-8f98-3cad3449ef12",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 780.42351904132943,
-            "y": 543.41701218364165
-          },
-          "nodeIndex": "TPD Race",
-          "nodeLineageTag": "d532d7ad-71cf-4312-ac51-6f6f6c4aebd8",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 464.14717660802455,
-            "y": 437.17211719982362
-          },
-          "nodeIndex": "TPD Runner",
-          "nodeLineageTag": "7f52b5ff-a342-4767-98f2-41214dbc6054",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 72.428648188468742,
-            "y": 158.3946230197829
+            "x": 1387.8116982031625,
+            "y": 42.591934529674347
           },
           "nodeIndex": "Pricing Comparison",
           "nodeLineageTag": "e5fcac25-60b8-46bf-beef-85e54cd44b40",
           "size": {
-            "height": 300,
+            "height": 571,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 38.35261355004593
+          },
+          "nodeIndex": "Meeting",
+          "nodeLineageTag": "250b2486-1283-4940-8616-f4ad0abed84d",
+          "size": {
+            "height": 581,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 489.20156119318528,
+            "y": 34.197311509891449
+          },
+          "nodeIndex": "Race",
+          "nodeLineageTag": "3d1a37a5-fbe6-4f8a-b020-1c4c93beef13",
+          "size": {
+            "height": 572,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 855,
+            "y": 38.337724329645653
+          },
+          "nodeIndex": "Runner",
+          "nodeLineageTag": "4306d299-8050-47f8-9f27-3e13114f1bee",
+          "size": {
+            "height": 576,
             "width": 234
           },
           "zIndex": 0

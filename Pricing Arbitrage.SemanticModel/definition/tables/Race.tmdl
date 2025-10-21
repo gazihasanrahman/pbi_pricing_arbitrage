@@ -1,0 +1,122 @@
+table Race
+	lineageTag: 3d1a37a5-fbe6-4f8a-b020-1c4c93beef13
+
+	column race_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4341157d-39ef-4a00-b53f-b66db29a7547
+		summarizeBy: none
+		sourceColumn: race_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column meeting_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d75a082-125d-40c8-8cc4-84b88333e97a
+		summarizeBy: none
+		sourceColumn: meeting_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column post_time_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 308a8be3-54c7-4175-a794-40413cfeb3f4
+		summarizeBy: none
+		sourceColumn: post_time_utc
+
+		variation Variation
+			isDefault
+			relationship: eb66d700-e396-4949-8335-4ca5c9c0fe93
+			defaultHierarchy: LocalDateTable_2a92377b-e261-40b2-8925-2906340ec109.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column race_number
+		dataType: int64
+		formatString: 0
+		lineageTag: f9358f52-7042-4908-ac9c-c12a1e0c1a9e
+		summarizeBy: sum
+		sourceColumn: race_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column race_length_description
+		dataType: string
+		lineageTag: a58e5789-d2a3-459a-871d-148d9db620ea
+		summarizeBy: none
+		sourceColumn: race_length_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column surface
+		dataType: string
+		lineageTag: 16fd0382-9d9d-49d8-a58d-bb9da812982a
+		summarizeBy: none
+		sourceColumn: surface
+
+		annotation SummarizationSetBy = Automatic
+
+	column obstacle
+		dataType: string
+		lineageTag: e5f7432d-f717-4715-a7a8-6676a70c01ae
+		summarizeBy: none
+		sourceColumn: obstacle
+
+		annotation SummarizationSetBy = Automatic
+
+	column going_description
+		dataType: string
+		lineageTag: 325832f8-addb-4a9f-865b-3b58f1c8108f
+		summarizeBy: none
+		sourceColumn: going_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column handicap
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dfccff4d-dd46-41c6-bf75-362776126022
+		summarizeBy: none
+		sourceColumn: handicap
+
+		annotation SummarizationSetBy = Automatic
+
+	column race_class
+		dataType: string
+		lineageTag: 53cc29c0-b208-42e8-ad4d-0c0684b18489
+		summarizeBy: none
+		sourceColumn: race_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column published
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 467fa0f7-fe09-48ef-b903-db9b2bca2e83
+		summarizeBy: none
+		sourceColumn: published
+
+		annotation SummarizationSetBy = Automatic
+
+	column gmax_sharecode
+		dataType: string
+		lineageTag: 730363e6-91ca-4a58-aae8-205cae02fe3c
+		summarizeBy: none
+		sourceColumn: gmax_sharecode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Race = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("general-mariadb-1-read.cqqnayulzicg.eu-west-2.rds.amazonaws.com", "general", [Query="select#(lf)race.race_id,#(lf)race.meeting_id,#(lf)race.post_time_utc,#(lf)race.race_number,#(lf)race.race_length_description,#(lf)race.surface,#(lf)race.obstacle,#(lf)race.going_description,#(lf)race.handicap,#(lf)race.race_class,#(lf)race.published,#(lf)race.gmax_sharecode#(lf)from tpd.race#(lf)where race.gmax_sharecode is not NULL#(lf)group by race.gmax_sharecode#(lf);", CreateNavigationProperties=false, ReturnSingleDatabase=true])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

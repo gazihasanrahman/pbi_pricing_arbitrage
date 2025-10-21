@@ -53,15 +53,30 @@
         }
       },
       {
-        "name": "f3839d9bf921509dd4cd",
+        "name": "c21cfbd4ff3c7de83143",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Pricing Comparison"
+                "Entity": "Meeting"
               }
             },
-            "Property": "gmax_runner_sharecode"
+            "Property": "country_code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "8813ce86b83f24ea550e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Meeting"
+              }
+            },
+            "Property": "racecourse"
           }
         },
         "type": "Categorical",
@@ -69,8 +84,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "p",
-              "Entity": "Pricing Comparison",
+              "Name": "m",
+              "Entity": "Meeting",
               "Type": 0
             }
           ],
@@ -83,10 +98,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "p"
+                            "Source": "m"
                           }
                         },
-                        "Property": "gmax_runner_sharecode"
+                        "Property": "racecourse"
                       }
                     }
                   ],
@@ -94,7 +109,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'0120251018125502'"
+                          "Value": "'Ascot'"
                         }
                       }
                     ]
@@ -104,6 +119,81 @@
             }
           ]
         },
+        "howCreated": "User"
+      },
+      {
+        "name": "415abe1b7e701773a55d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Race"
+              }
+            },
+            "Property": "going_description"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "eba9941d17c81e6981d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Race"
+              }
+            },
+            "Property": "surface"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "78496fa95a8c35f421cf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Runner"
+              }
+            },
+            "Property": "finish_position"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "eae1711587f35a6200b4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Race"
+              }
+            },
+            "Property": "obstacle"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "dc807d4ed1c11db03421",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Meeting"
+              }
+            },
+            "Property": "meeting_date"
+          }
+        },
+        "type": "Advanced",
         "howCreated": "User"
       }
     ]

@@ -1,0 +1,597 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "e3af7a24b02c3863b4d0",
+  "position": {
+    "x": 275.1473136915078,
+    "y": 0,
+    "z": 0,
+    "height": 720,
+    "width": 1005.1299826689774,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "gmax_runner_sharecode"
+                }
+              },
+              "queryRef": "Pricing Comparison.gmax_runner_sharecode",
+              "nativeQueryRef": "gmax_runner_sharecode"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "price_time"
+                }
+              },
+              "queryRef": "Pricing Comparison.price_time",
+              "nativeQueryRef": "Count of price_time"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "price_betfair"
+                }
+              },
+              "queryRef": "Sum(Pricing Comparison.price_betfair)",
+              "nativeQueryRef": "price_betfair"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "price_v1_2"
+                }
+              },
+              "queryRef": "Sum(Pricing Comparison.price_v1_2)",
+              "nativeQueryRef": "price_v1_2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "diff_v1_2"
+                }
+              },
+              "queryRef": "Sum(Pricing Comparison.diff_v1_2)",
+              "nativeQueryRef": "diff_v1_2"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pricing Comparison"
+                  }
+                },
+                "Property": "price_time"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "132.191632546237D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pricing Comparison.price_time"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.0311958405546D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pricing Comparison.gmax_runner_sharecode"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "68.95921192675125D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Pricing Comparison.price_betfair)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "83.16929767683962D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Pricing Comparison.price_m1_2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "187.3415565855484D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Pricing Comparison.diff_v1_2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "189.97774341122025D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Pricing Comparison.price_v1_2)"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Pricing Comparison"
+                                }
+                              },
+                              "Property": "diff_m1_2"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#a1343c'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "-1D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'maxColor'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "1D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(Pricing Comparison.diff_m1_2)"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Pricing Comparison"
+                                }
+                              },
+                              "Property": "diff_e1_2"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#6b2328'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "-1D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'maxColor'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "1D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(Pricing Comparison.diff_e1_2)"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Pricing Comparison"
+                                }
+                              },
+                              "Property": "diff_v1_2"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#6b2328'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "-1D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'maxColor'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "1D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(Pricing Comparison.diff_v1_2)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2362dc23d1a5eb0fd226",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "gmax_runner_sharecode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "58d24f80a95021770be5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "price_time"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2b70f01759d94fb4b0c9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "price_betfair"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b62f3e93733357f70eae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "price_v1_2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b9dca80e5be6ef92f6d7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "diff_v1_2"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

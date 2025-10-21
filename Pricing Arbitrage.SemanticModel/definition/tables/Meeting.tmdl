@@ -1,0 +1,65 @@
+table Meeting
+	lineageTag: 250b2486-1283-4940-8616-f4ad0abed84d
+
+	column meeting_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b8fe53c4-67a6-42ca-ac4d-af25a48b0f12
+		summarizeBy: none
+		sourceColumn: meeting_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column meeting_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1d13ce7d-2a82-45af-922e-b1c6fcd77b08
+		summarizeBy: none
+		sourceColumn: meeting_date
+
+		variation Variation
+			isDefault
+			relationship: d2610296-be8a-4da5-a1a1-25ca38c57e91
+			defaultHierarchy: LocalDateTable_5387d7f7-ed7e-4a8a-a1ff-97c2afc1ea5b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column country_code
+		dataType: string
+		lineageTag: 5db2b099-5112-4909-aa28-6a31e628af7b
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column racecourse
+		dataType: string
+		lineageTag: 7bc9fb83-1856-4e83-be33-1ac93651da55
+		summarizeBy: none
+		sourceColumn: racecourse
+
+		annotation SummarizationSetBy = Automatic
+
+	column gmax_meeting_sharecode
+		dataType: string
+		lineageTag: 796f4989-d6e5-4127-adff-49131481765f
+		summarizeBy: none
+		sourceColumn: gmax_meeting_sharecode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Meeting = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("general-mariadb-1-read.cqqnayulzicg.eu-west-2.rds.amazonaws.com", "general", [ReturnSingleDatabase=true, Query="select#(lf)meeting.meeting_id,#(lf)meeting.meeting_date,#(lf)meeting.country_code,#(lf)meeting.racecourse,#(lf)meeting.gmax_meeting_sharecode#(lf)from tpd.meeting #(lf);#(lf)", CreateNavigationProperties=false]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"meeting_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

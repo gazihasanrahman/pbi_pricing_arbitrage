@@ -8,19 +8,18 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DirectQuery to AS - _source","Pricing Comparison"]
+annotation PBI_QueryOrder = ["Pricing Comparison","Meeting","Race","Runner"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table 'TPD Meeting'
-ref table 'TPD Race'
-ref table 'TPD Runner'
-ref table 'TPD Course'
-ref table LocalDateTable_e5903425-66dc-4941-a247-8ec8ee015908
-ref table LocalDateTable_01981014-986b-4d10-a6f6-92650cdd4519
 ref table 'Pricing Comparison'
 ref table DateTableTemplate_ffc3a281-de03-4b30-894e-c408fc7afc40
 ref table LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c
+ref table Meeting
+ref table LocalDateTable_5387d7f7-ed7e-4a8a-a1ff-97c2afc1ea5b
+ref table Race
+ref table LocalDateTable_2a92377b-e261-40b2-8925-2906340ec109
+ref table Runner
 
 ref cultureInfo en-US
 

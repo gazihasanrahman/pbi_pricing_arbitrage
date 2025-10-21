@@ -19,7 +19,7 @@ table 'Pricing Comparison'
 
 	column price_time
 		dataType: dateTime
-		formatString: General Date
+		formatString: yyyy-mm-dd h:nn:ss
 		lineageTag: c9e45e8d-50e8-42cd-ade1-ed21036c59ef
 		summarizeBy: none
 		sourceColumn: price_time
@@ -31,71 +31,70 @@ table 'Pricing Comparison'
 
 		annotation SummarizationSetBy = Automatic
 
-	column price_true
-		dataType: double
-		lineageTag: 05296586-fa0d-431f-b7ed-6d718f853e35
-		summarizeBy: sum
-		sourceColumn: price_true
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column price_m1_2
 		dataType: double
+		formatString: 0.00
 		lineageTag: 0a721846-b215-40dd-8cb5-2d173e5cc7bd
 		summarizeBy: sum
 		sourceColumn: price_m1_2
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column price_e1_2
 		dataType: double
+		formatString: 0.00
 		lineageTag: d06f54ec-0909-491b-8466-84c6688972e2
 		summarizeBy: sum
 		sourceColumn: price_e1_2
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column price_v1_2
 		dataType: double
+		formatString: 0.00
 		lineageTag: e94af241-2a69-4088-a44e-eab6340652ca
 		summarizeBy: sum
 		sourceColumn: price_v1_2
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column comparison_m1_2
+	column price_betfair
 		dataType: double
-		lineageTag: 37f0e3c3-4c18-4687-8803-2d8928c63a65
+		lineageTag: 5b17253a-b3a5-4cb9-9f9e-8a456e088a58
 		summarizeBy: sum
-		sourceColumn: comparison_m1_2
+		sourceColumn: price_betfair
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column comparison_e1_2
+	column diff_v1_2
 		dataType: double
-		lineageTag: 7b822958-3976-4204-9c8f-a887e48ab2ed
+		lineageTag: 72ffeae4-e24b-441b-87e2-f8d1aff419d1
 		summarizeBy: sum
-		sourceColumn: comparison_e1_2
+		sourceColumn: diff_v1_2
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column comparison_v1_2
+	column diff_m1_2
 		dataType: double
-		lineageTag: 8ab77ef5-1fb6-4385-8918-8286d5f531c8
+		lineageTag: 0da50a9b-66fc-40b8-b67b-29f7fad581d1
 		summarizeBy: sum
-		sourceColumn: comparison_v1_2
+		sourceColumn: diff_m1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column diff_e1_2
+		dataType: double
+		lineageTag: 20a66f9f-9871-41d0-9b5c-888ae5c0e0dc
+		summarizeBy: sum
+		sourceColumn: diff_e1_2
 
 		annotation SummarizationSetBy = Automatic
 
