@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Pricing Arbitrage"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "840d8ebc-dd38-41dc-bf08-1c62f49921dd"
+  }
+}

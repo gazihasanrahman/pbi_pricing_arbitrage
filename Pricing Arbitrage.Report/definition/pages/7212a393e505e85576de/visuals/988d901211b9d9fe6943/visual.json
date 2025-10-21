@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "988d901211b9d9fe6943",
+  "position": {
+    "x": 9.98266897746967,
+    "y": 319.44540727902944,
+    "z": 1,
+    "height": 280.13864818024263,
+    "width": 815.45927209705371,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "price_time"
+                }
+              },
+              "queryRef": "Pricing Comparison.price_time",
+              "nativeQueryRef": "Count of price_time",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pricing Comparison"
+                        }
+                      },
+                      "Property": "comparison_m1_2"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Pricing Comparison.comparison_m1_2)",
+              "nativeQueryRef": "Sum of comparison_m1_2"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pricing Comparison"
+                  }
+                },
+                "Property": "price_time"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "05cf1fb20f40d8dbe05d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "price_time"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad5ca250dcac043dc52c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pricing Comparison"
+                  }
+                },
+                "Property": "comparison_m1_2"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

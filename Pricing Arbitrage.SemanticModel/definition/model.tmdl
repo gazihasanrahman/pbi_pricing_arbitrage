@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - _source","Pricing Comparison"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'TPD Meeting'
+ref table 'TPD Race'
+ref table 'TPD Runner'
+ref table 'TPD Course'
+ref table LocalDateTable_e5903425-66dc-4941-a247-8ec8ee015908
+ref table LocalDateTable_01981014-986b-4d10-a6f6-92650cdd4519
+ref table 'Pricing Comparison'
+ref table DateTableTemplate_ffc3a281-de03-4b30-894e-c408fc7afc40
+ref table LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c
+
+ref cultureInfo en-US
+

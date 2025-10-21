@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Pricing Arbitrage"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8e9aee01-0a27-43b8-a632-7ff969b600ae"
+  }
+}

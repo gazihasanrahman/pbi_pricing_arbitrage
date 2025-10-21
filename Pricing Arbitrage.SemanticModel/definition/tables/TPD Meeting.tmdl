@@ -1,0 +1,225 @@
+table 'TPD Meeting'
+	lineageTag: d8f2825a-b9ac-47f8-affe-f4e6159f5769
+	sourceLineageTag: 5f06590c-e4af-49e8-8f98-3cad3449ef12
+
+	measure 'Meeting Total' = EXTERNALMEASURE("Meeting Total", INTEGER, "DirectQuery to AS - _source")
+		formatString: #,0
+		lineageTag: 700ea9d2-1e0a-465e-8bf0-2df0ccbe3dc4
+		sourceLineageTag: 28f8a314-f0a0-44d6-92fb-d0c1b0604ded
+		dataCategory: Uncategorized
+
+	column 'TPD Meeting ID'
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 0b92e5a8-aee6-4e5b-9741-8a162c6181de
+		sourceLineageTag: 175864ff-4934-44a3-bed1-5c1b7c0f9604
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TPD Meeting ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Meeting Date'
+		dataType: dateTime
+		formatString: yyyy\-mm\-dd
+		lineageTag: 31ced2bc-9668-427c-bdd3-85978008e1c3
+		sourceLineageTag: 7f1d968b-05c3-4ddf-afb8-80cd327c3b82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Meeting Date
+
+		variation Variation
+			isDefault
+			relationship: 4a019abf-76a1-4dd7-9ebd-7f3d3d6d53de
+			defaultHierarchy: LocalDateTable_e5903425-66dc-4941-a247-8ec8ee015908.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column Racecourse
+		dataType: string
+		lineageTag: 8f847551-229a-400c-a2cb-0e42a7eff317
+		sourceLineageTag: cb59330e-c8fe-4dc3-8d2a-566308e4b5d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Racecourse
+
+		annotation SummarizationSetBy = User
+
+	column 'Meeting Status'
+		dataType: string
+		lineageTag: 59e73012-650f-4ee9-8ec8-09cbf3a82c61
+		sourceLineageTag: 9e739535-4b31-4af3-98e2-030cc54bda23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Meeting Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Gmax Meeting Sharecode'
+		dataType: string
+		lineageTag: 2cd49012-0015-47ac-9bd7-6afb14b5262f
+		sourceLineageTag: d863a2b5-522d-42d6-9f6f-dfbccecbf8d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gmax Meeting Sharecode
+
+		annotation SummarizationSetBy = User
+
+	column 'Gmax Meeting Estimated'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4d8f0c2f-a237-4799-bbc0-22fe5916883d
+		sourceLineageTag: 4efa7a1e-b8b5-4859-aadc-3c136679769c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gmax Meeting Estimated
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 2e4beaeb-1067-4a59-9dfb-8f4f8dc2b7c5
+		sourceLineageTag: a2b442f4-f039-40a5-b0f8-3359bf5fcdc7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Meeting Tracked'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f8f0455b-4cad-42de-9e1c-f49334756563
+		sourceLineageTag: 77be0b0d-fc95-4702-9ac1-583f5b5da8d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Meeting Tracked
+
+		annotation SummarizationSetBy = User
+
+	column 'TPD Course ID'
+		dataType: string
+		lineageTag: 36709f8c-5b71-45dc-b037-8454db7a467a
+		sourceLineageTag: 482bc3be-b14e-4be6-90b8-6f39afefe5aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TPD Course ID
+
+		annotation SummarizationSetBy = User
+
+	column 'First Race Obstacle'
+		dataType: string
+		lineageTag: d702e7da-0f9b-4186-8d6f-a66351ed9b28
+		sourceLineageTag: ece61a6a-4644-479b-a9df-a759a811ee44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: First Race Obstacle
+
+		annotation SummarizationSetBy = User
+
+	column 'Meeting Day'
+		dataType: string
+		lineageTag: bc49865b-fb00-4245-bfce-6ca220ccfcd6
+		sourceLineageTag: 7549d997-8ef8-446e-b3db-2a235bfa0264
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Meeting Day
+		sortByColumn: 'Weekday Number'
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 51add2d1-4916-45a8-ac09-87cd2cd46b17
+		sourceLineageTag: 65bfa67d-6fae-4e46-9b43-547b5d292c61
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 66e7e05c-cd6a-4a3b-b8c6-d45b43c63846
+		sourceLineageTag: c445203f-7d47-46ac-b559-deaeb7fdd71b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = User
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: b94f1c93-c7c5-4b21-bf99-ecf6da8201d1
+		sourceLineageTag: 8f1db9c1-5055-4c08-bca6-acbdb82069bf
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = User
+
+	column Year-Month
+		dataType: string
+		lineageTag: f92c4d18-e7e5-4d82-8f83-15a2650b62ca
+		sourceLineageTag: 1db46bf0-2b7a-4993-9994-cd58eadc72dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year-Month
+		sortByColumn: Year-Month-Index
+
+		annotation SummarizationSetBy = User
+
+	column Year-Week
+		dataType: string
+		lineageTag: d0188c27-9531-4bd0-9879-337fafeb651c
+		sourceLineageTag: 76c742bb-c49f-4695-b840-4a5050b33195
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year-Week
+		sortByColumn: Year-Week-Index
+
+		annotation SummarizationSetBy = User
+
+	column 'Weekday Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5bd87af5-3e56-45fb-bc30-0f6d3ceb423a
+		sourceLineageTag: 657351b1-caab-4e1c-8512-40bd7e5ccb22
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Weekday Number
+
+		annotation SummarizationSetBy = User
+
+	column Year-Month-Index
+		dataType: double
+		lineageTag: 073049a2-213c-4af5-bafd-e8277ab1400f
+		sourceLineageTag: 00aa47ba-e789-4a63-869f-66fc002cba2c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Year-Month-Index
+
+		annotation SummarizationSetBy = User
+
+	column Year-Week-Index
+		dataType: double
+		lineageTag: 4f053973-b8cf-4bd2-a652-4a0e0628c1fc
+		sourceLineageTag: 7c174641-e844-44ff-8264-9f6eb2019589
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Year-Week-Index
+
+		annotation SummarizationSetBy = User
+
+	partition 'TPD Meeting' = entity
+		mode: directQuery
+		source
+			entityName: TPD Meeting
+			expressionSource: 'DirectQuery to AS - _source'
+
+	annotation PBI_ResultType = Exception
+

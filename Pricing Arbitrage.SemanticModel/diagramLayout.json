@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1482.5758247964934,
+            "y": 431.6681841980012
+          },
+          "nodeIndex": "TPD Course",
+          "nodeLineageTag": "eedf344c-bb19-4dbb-bb82-866ac3b03d02",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1197.0148796183507,
+            "y": 313.88329843222721
+          },
+          "nodeIndex": "TPD Meeting",
+          "nodeLineageTag": "5f06590c-e4af-49e8-8f98-3cad3449ef12",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 780.42351904132943,
+            "y": 543.41701218364165
+          },
+          "nodeIndex": "TPD Race",
+          "nodeLineageTag": "d532d7ad-71cf-4312-ac51-6f6f6c4aebd8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 464.14717660802455,
+            "y": 437.17211719982362
+          },
+          "nodeIndex": "TPD Runner",
+          "nodeLineageTag": "7f52b5ff-a342-4767-98f2-41214dbc6054",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 72.428648188468742,
+            "y": 158.3946230197829
+          },
+          "nodeIndex": "Pricing Comparison",
+          "nodeLineageTag": "e5fcac25-60b8-46bf-beef-85e54cd44b40",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

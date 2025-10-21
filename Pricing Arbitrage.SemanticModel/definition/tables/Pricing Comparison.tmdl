@@ -1,0 +1,115 @@
+table 'Pricing Comparison'
+	lineageTag: e5fcac25-60b8-46bf-beef-85e54cd44b40
+
+	column gmax_runner_sharecode
+		dataType: string
+		lineageTag: 94ed0da9-cbc2-43e5-8b8f-30ee54c7e621
+		summarizeBy: none
+		sourceColumn: gmax_runner_sharecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column gmax_race_sharecode
+		dataType: string
+		lineageTag: dc685318-b1aa-4cfd-9a52-e116f53e51c6
+		summarizeBy: none
+		sourceColumn: gmax_race_sharecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c9e45e8d-50e8-42cd-ade1-ed21036c59ef
+		summarizeBy: none
+		sourceColumn: price_time
+
+		variation Variation
+			isDefault
+			relationship: b18e25be-a6b2-4a69-9848-efa3995cca2e
+			defaultHierarchy: LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_true
+		dataType: double
+		lineageTag: 05296586-fa0d-431f-b7ed-6d718f853e35
+		summarizeBy: sum
+		sourceColumn: price_true
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_m1_2
+		dataType: double
+		lineageTag: 0a721846-b215-40dd-8cb5-2d173e5cc7bd
+		summarizeBy: sum
+		sourceColumn: price_m1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_e1_2
+		dataType: double
+		lineageTag: d06f54ec-0909-491b-8466-84c6688972e2
+		summarizeBy: sum
+		sourceColumn: price_e1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_v1_2
+		dataType: double
+		lineageTag: e94af241-2a69-4088-a44e-eab6340652ca
+		summarizeBy: sum
+		sourceColumn: price_v1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column comparison_m1_2
+		dataType: double
+		lineageTag: 37f0e3c3-4c18-4687-8803-2d8928c63a65
+		summarizeBy: sum
+		sourceColumn: comparison_m1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column comparison_e1_2
+		dataType: double
+		lineageTag: 7b822958-3976-4204-9c8f-a887e48ab2ed
+		summarizeBy: sum
+		sourceColumn: comparison_e1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column comparison_v1_2
+		dataType: double
+		lineageTag: 8ab77ef5-1fb6-4385-8918-8286d5f531c8
+		summarizeBy: sum
+		sourceColumn: comparison_v1_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Pricing Comparison' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("general-mariadb-1-read.cqqnayulzicg.eu-west-2.rds.amazonaws.com", "general", [ReturnSingleDatabase=true, Query="select * from general.pricing_arbitrage_price; ", CreateNavigationProperties=false])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

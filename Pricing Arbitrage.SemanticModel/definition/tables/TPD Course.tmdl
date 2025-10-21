@@ -1,0 +1,103 @@
+table 'TPD Course'
+	lineageTag: e60d7fd8-21ac-47cf-9894-ec22bdd41d61
+	sourceLineageTag: eedf344c-bb19-4dbb-bb82-866ac3b03d02
+
+	column Racecourse
+		dataType: string
+		lineageTag: 55137805-dbed-4a79-95fa-3909d0b39d58
+		sourceLineageTag: 674db44f-aa13-4750-be0c-f2a696202991
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Racecourse
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 1328e129-13eb-4d43-a012-28451054ed70
+		sourceLineageTag: 52e73fba-5f41-49e7-a5fa-0ce087733a2c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Time Zone'
+		dataType: string
+		lineageTag: b77e6a81-40f1-4d02-a3e6-d32739606b85
+		sourceLineageTag: 35e8b100-d57e-46e1-81c2-7869a336ae5a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time Zone
+
+		annotation SummarizationSetBy = User
+
+	column 'Racecourse Owner'
+		dataType: string
+		lineageTag: 7fa4f7df-d7cc-4641-9502-f5528f476194
+		sourceLineageTag: 6810203e-5985-41c5-8810-8de28c683263
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Racecourse Owner
+
+		annotation SummarizationSetBy = User
+
+	column Latitude
+		dataType: double
+		lineageTag: fb81cf41-c93f-482a-a5b9-d2264ac4497b
+		sourceLineageTag: 924d2ce0-292f-4a13-baa4-9fd1ef3218b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = User
+
+	column Longitude
+		dataType: double
+		lineageTag: c2d0476f-8b3d-4143-a0f1-da60b865a033
+		sourceLineageTag: 9b5cfb81-4fff-4bae-a2e9-8e6636624c62
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = User
+
+	column 'TPD Course ID'
+		dataType: string
+		isNullable: false
+		lineageTag: 4e752629-f637-42b1-923e-5d0ef4a07804
+		sourceLineageTag: cabaf7a1-58a7-446e-860b-b4ea23c1736e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TPD Course ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Racecourse (short)'
+		dataType: string
+		lineageTag: 16872a25-ef5f-4c3f-9c55-ebcc552d8e76
+		sourceLineageTag: 19297fc1-3c8d-48d6-b224-b14f75d8d64a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Racecourse (short)
+
+		annotation SummarizationSetBy = User
+
+	column 'CRM URL'
+		dataType: int64
+		lineageTag: 8f5169b5-6d7c-4af7-8f25-aedc8b222e98
+		sourceLineageTag: ca6ce8ca-b850-403a-9df7-1e131b9d9ece
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CRM URL
+
+		annotation SummarizationSetBy = User
+
+	partition 'TPD Course' = entity
+		mode: directQuery
+		source
+			entityName: TPD Course
+			expressionSource: 'DirectQuery to AS - _source'
+
+	annotation PBI_ResultType = Exception
+
