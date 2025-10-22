@@ -1,6 +1,42 @@
 table 'Pricing Comparison'
 	lineageTag: e5fcac25-60b8-46bf-beef-85e54cd44b40
 
+	measure count_e1_2 = CALCULATE(COUNTROWS('Pricing Comparison'),'Pricing Comparison'[diff_e1_2] < -0.00)
+		formatString: #,0
+		lineageTag: 32f2be34-01f9-4bc8-9dfb-53a79a0ab6e3
+
+	measure vol_e1_2 = CALCULATE(SUM('Pricing Comparison'[diff_e1_2]),'Pricing Comparison'[diff_e1_2] < -0.00)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: a5f35c20-a4eb-4eac-81af-4f7c340f19a9
+
+	measure count_m1_2 = CALCULATE(COUNTROWS('Pricing Comparison'),'Pricing Comparison'[diff_m1_2] < -0.00)
+		formatString: #,0
+		lineageTag: bc6ff760-ff2b-4e5a-bb4a-e761c87d5375
+
+	measure count_v1_2 = CALCULATE(COUNTROWS('Pricing Comparison'),'Pricing Comparison'[diff_v1_2] < -0.00)
+		formatString: #,0
+		lineageTag: c0bc85a0-47ce-42d3-a320-177226774aaf
+
+	measure vol_m1_2 = CALCULATE(SUM('Pricing Comparison'[diff_m1_2]),'Pricing Comparison'[diff_m1_2] < -0.00)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: bb54c2a0-e401-4309-9c1b-de4cdf2437bf
+
+	measure vol_v1_2 = CALCULATE(SUM('Pricing Comparison'[diff_v1_2]),'Pricing Comparison'[diff_v1_2] < -0.00)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: c4114518-6c09-4058-b0e2-7c53e9d773e7
+
+	measure count_any = CALCULATE(COUNTROWS('Pricing Comparison'),'Pricing Comparison'[diff_min] < -0.00)
+		formatString: #,0
+		lineageTag: 845f7fd0-32cd-4352-bcd6-2c92eaef1170
+
+	measure count_pa = CALCULATE(COUNTROWS('Pricing Comparison'),'Pricing Comparison'[diff_pa] < -0.00)
+		formatString: #,0
+		lineageTag: 8dea5f21-f0c5-471b-aa2c-cff10410cdbc
+
+	measure vol_pa = CALCULATE(SUM('Pricing Comparison'[diff_pa]),'Pricing Comparison'[diff_pa] < -0.00)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: 89f5e60c-afb5-4e4b-a4d3-47713b11ee64
+
 	column gmax_runner_sharecode
 		dataType: string
 		lineageTag: 94ed0da9-cbc2-43e5-8b8f-30ee54c7e621
@@ -72,29 +108,55 @@ table 'Pricing Comparison'
 
 	column diff_v1_2
 		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 72ffeae4-e24b-441b-87e2-f8d1aff419d1
 		summarizeBy: sum
 		sourceColumn: diff_v1_2
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column diff_m1_2
 		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 0da50a9b-66fc-40b8-b67b-29f7fad581d1
 		summarizeBy: sum
 		sourceColumn: diff_m1_2
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column diff_e1_2
 		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 20a66f9f-9871-41d0-9b5c-888ae5c0e0dc
 		summarizeBy: sum
 		sourceColumn: diff_e1_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_pa
+		dataType: double
+		lineageTag: 42bcbefb-4a16-4828-841b-7250c7c35fc7
+		summarizeBy: sum
+		sourceColumn: price_pa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column diff_pa
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c45e37a8-c101-4ca8-bb3d-44d432a0dd08
+		summarizeBy: sum
+		sourceColumn: diff_pa
+
+		annotation SummarizationSetBy = Automatic
+
+	column diff_min
+		dataType: double
+		lineageTag: bf6ac0b1-abbd-4582-900e-e32c1482b8a6
+		summarizeBy: sum
+		sourceColumn: diff_min
 
 		annotation SummarizationSetBy = Automatic
 

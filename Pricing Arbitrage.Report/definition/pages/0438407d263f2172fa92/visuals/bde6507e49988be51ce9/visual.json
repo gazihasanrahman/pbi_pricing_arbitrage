@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "a431835b3e0216e6ce72",
+  "name": "bde6507e49988be51ce9",
   "position": {
     "x": 0,
     "y": 0,
     "z": 1000,
     "height": 720,
-    "width": 263.91681109185441
+    "width": 467.9376083188908,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -57,7 +58,7 @@
               },
               "queryRef": "Runner.rsc_with_fp",
               "nativeQueryRef": "rsc_with_fp",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -65,23 +66,78 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Pricing Comparison"
-                        }
-                      },
-                      "Property": "price_time"
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
                     }
                   },
-                  "Function": 5
+                  "Property": "count_any"
                 }
               },
-              "queryRef": "Min(Pricing Comparison.price_time)",
-              "nativeQueryRef": "incidents",
-              "displayName": "incidents"
+              "queryRef": "Pricing Comparison.count_any",
+              "nativeQueryRef": "all",
+              "displayName": "all"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "count_v1_2"
+                }
+              },
+              "queryRef": "Pricing Comparison.count_v1_2",
+              "nativeQueryRef": "v1.2",
+              "displayName": "v1.2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "count_m1_2"
+                }
+              },
+              "queryRef": "Pricing Comparison.count_m1_2",
+              "nativeQueryRef": "m1.2",
+              "displayName": "m1.2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "count_e1_2"
+                }
+              },
+              "queryRef": "Pricing Comparison.count_e1_2",
+              "nativeQueryRef": "e1.2",
+              "displayName": "e1.2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "count_pa"
+                }
+              },
+              "queryRef": "Pricing Comparison.count_pa",
+              "nativeQueryRef": "pa",
+              "displayName": "pa"
             }
           ]
         }
@@ -215,19 +271,7 @@
                   }
                 }
               ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'01202510181525'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
+              "isToggled": true
             }
           ]
         }
@@ -268,7 +312,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "189.83326450453723D"
+                  "Value": "162.35606775946698D"
                 }
               }
             }
@@ -295,24 +339,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "050886a5e16c0af184f8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "comparison_m1_2"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      }
-    ]
   }
 }
