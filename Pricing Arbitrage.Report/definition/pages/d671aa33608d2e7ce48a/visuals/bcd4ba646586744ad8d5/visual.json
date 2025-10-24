@@ -106,7 +106,7 @@
               },
               "queryRef": "Meeting.racecourse",
               "nativeQueryRef": "racecourse",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -121,7 +121,7 @@
               },
               "queryRef": "Pricing Comparison.gmax_race_sharecode",
               "nativeQueryRef": "gmax_race_sharecode",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -385,28 +385,6 @@
                               "isToggled": true
                             }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "21L"
-                          }
-                        }
-                      ],
-                      "isToggled": true,
-                      "children": [
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Horseshoe Indianapolis'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
                         }
                       ]
                     },
