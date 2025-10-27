@@ -4,9 +4,10 @@
   "position": {
     "x": 625.29128808124,
     "y": 0,
-    "z": 1001,
-    "height": 476.83591662212723,
-    "width": 654.70871191876006
+    "z": 1000,
+    "height": 719.70069481560665,
+    "width": 654.70871191876006,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -983,7 +984,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5d1c1456e7a3a64f4864",
+        "name": "07a83d6476fd0a75be9f",
         "field": {
           "Column": {
             "Expression": {
@@ -997,7 +998,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3a840aa37c32f716fde2",
+        "name": "fb1036f44c1eb5f00b5a",
         "field": {
           "Column": {
             "Expression": {
@@ -1011,7 +1012,7 @@
         "type": "Advanced"
       },
       {
-        "name": "e2195ccf8f4e66886444",
+        "name": "cb2b2303e9593173e774",
         "field": {
           "Column": {
             "Expression": {
@@ -1025,7 +1026,7 @@
         "type": "Advanced"
       },
       {
-        "name": "e21e304426360212cf50",
+        "name": "9aebc5480dcf519677e4",
         "field": {
           "Column": {
             "Expression": {
@@ -1039,7 +1040,7 @@
         "type": "Advanced"
       },
       {
-        "name": "8bdfca7462e77577730e",
+        "name": "5789b6b02fad10b6ce88",
         "field": {
           "Column": {
             "Expression": {
@@ -1053,7 +1054,7 @@
         "type": "Advanced"
       },
       {
-        "name": "27443da4f84e4911dd91",
+        "name": "81a01028c91dcd1f949d",
         "field": {
           "Column": {
             "Expression": {
@@ -1067,7 +1068,7 @@
         "type": "Advanced"
       },
       {
-        "name": "b0753efb005deaeca66f",
+        "name": "a7e1574584553f1fb5ae",
         "field": {
           "Column": {
             "Expression": {
@@ -1081,7 +1082,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d2adb01a63b8fc04ffc9",
+        "name": "896312858a3cf8f79d4e",
         "field": {
           "Column": {
             "Expression": {
@@ -1095,7 +1096,7 @@
         "type": "Advanced"
       },
       {
-        "name": "742515d319e0386969fd",
+        "name": "e89e20a7d567c07eadc2",
         "field": {
           "Column": {
             "Expression": {
@@ -1109,7 +1110,7 @@
         "type": "Advanced"
       },
       {
-        "name": "36fca16b9089872e9973",
+        "name": "d6720e09caf39e8c7bcc",
         "field": {
           "Column": {
             "Expression": {

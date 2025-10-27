@@ -4,10 +4,9 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1000,
+    "z": 0,
     "height": 719.70069481560665,
-    "width": 625.29128808124,
-    "tabOrder": 1000
+    "width": 625.29128808124
   },
   "visual": {
     "visualType": "pivotTable",
@@ -15,6 +14,84 @@
       "queryState": {
         "Rows": {
           "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Pricing Comparison"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "price_time"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Pricing Comparison.price_time.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "price_time Year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Pricing Comparison"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "price_time"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Pricing Comparison.price_time.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "price_time Month",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Pricing Comparison"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "price_time"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Pricing Comparison.price_time.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "price_time Day",
+              "active": true
+            },
             {
               "field": {
                 "Column": {
@@ -28,7 +105,7 @@
               },
               "queryRef": "Meeting.racecourse",
               "nativeQueryRef": "racecourse",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -195,6 +272,63 @@
         "levels": [
           {
             "queryRefs": [
+              "Pricing Comparison.price_time.Variation.Date Hierarchy.Year"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pricing Comparison.price_time.Variation.Date Hierarchy.Month"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c"
+                    }
+                  },
+                  "Property": "Month"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pricing Comparison.price_time.Variation.Date Hierarchy.Day"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "LocalDateTable_20162817-6765-433e-89c5-7f003b9a2c8c"
+                    }
+                  },
+                  "Property": "Day"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
               "Meeting.racecourse"
             ],
             "isCollapsed": true,
@@ -245,20 +379,8 @@
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'Ascot'"
+                    "Value": "'Laurel Park'"
                   }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'01202510031455'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
                 }
               ]
             },
@@ -266,8 +388,21 @@
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'Laurel Park'"
+                    "Value": "2025L"
                   }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'October'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
                 }
               ]
             }
@@ -821,163 +956,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "426bf81fd7c34d8465f1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Meeting"
-              }
-            },
-            "Property": "racecourse"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6315f1dbaefda2363fd0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "gmax_race_sharecode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "38231e25dee018392b54",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Runner"
-              }
-            },
-            "Property": "rsc_with_fp"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b559c2d72c3c26b33437",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "count_e1_2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a5f1565f9350bf6c20a7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "count_m1_2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "83c764e37d8571ac3327",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "count_v1_2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "76a354f473eb618c482d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "count_pa"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fcee2d31e62e4cb46744",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "vol_pa"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5209abc33cf45e17ff1d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "vol_v1_2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "09ac2239b0b41feef92f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "vol_m1_2"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b23e86e1a09de3ebdf9f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Pricing Comparison"
-              }
-            },
-            "Property": "vol_e1_2"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

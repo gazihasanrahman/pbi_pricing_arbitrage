@@ -12,7 +12,7 @@ table Meeting
 
 	column meeting_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: yyyy-mm-dd
 		lineageTag: 1d13ce7d-2a82-45af-922e-b1c6fcd77b08
 		summarizeBy: none
 		sourceColumn: meeting_date
@@ -25,6 +25,8 @@ table Meeting
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column country_code
 		dataType: string

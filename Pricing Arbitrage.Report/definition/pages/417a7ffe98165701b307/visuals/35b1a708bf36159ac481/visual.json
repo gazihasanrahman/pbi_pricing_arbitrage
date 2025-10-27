@@ -1,0 +1,308 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "35b1a708bf36159ac481",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 368.74398717263495,
+    "width": 1280
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Meeting"
+                    }
+                  },
+                  "Property": "meeting_date"
+                }
+              },
+              "queryRef": "Meeting.meeting_date",
+              "nativeQueryRef": "meeting_date",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "vol_v1_2"
+                }
+              },
+              "queryRef": "Pricing Comparison.vol_v1_2",
+              "nativeQueryRef": "vol_v1_2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "vol_m1_2"
+                }
+              },
+              "queryRef": "Pricing Comparison.vol_m1_2",
+              "nativeQueryRef": "vol_m1_2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "vol_e1_2"
+                }
+              },
+              "queryRef": "Pricing Comparison.vol_e1_2",
+              "nativeQueryRef": "vol_e1_2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pricing Comparison"
+                    }
+                  },
+                  "Property": "vol_pa"
+                }
+              },
+              "queryRef": "Pricing Comparison.vol_pa",
+              "nativeQueryRef": "vol_pa"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Meeting"
+                  }
+                },
+                "Property": "meeting_date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "titleColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FF0000'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pricing Comparison.vol_v1_2"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Volume by Time - All'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c156a07cce1a97bbbdf0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "vol_v1_2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "197cfae04bfb537207c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "vol_m1_2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1b358328aa4d92baeaea",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "vol_e1_2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2efb191466fa59cd8cc8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pricing Comparison"
+              }
+            },
+            "Property": "vol_pa"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e5c30646b85c54617ce0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Meeting"
+              }
+            },
+            "Property": "meeting_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

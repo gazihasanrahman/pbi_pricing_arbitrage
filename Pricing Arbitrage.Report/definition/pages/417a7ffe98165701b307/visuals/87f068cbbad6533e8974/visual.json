@@ -1,97 +1,34 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "c8889d33c56416baf7df",
+  "name": "87f068cbbad6533e8974",
   "position": {
-    "x": 625.29128808124,
-    "y": 476.83591662212723,
-    "z": 1002,
-    "height": 242.86477819347942,
-    "width": 654.70871191876006,
-    "tabOrder": 1001
+    "x": 0,
+    "y": 368.74398717263495,
+    "z": 1000,
+    "height": 350.95670764297171,
+    "width": 1280,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Meeting"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "meeting_date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Meeting"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "meeting_date"
                 }
               },
-              "queryRef": "Meeting.meeting_date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "meeting_date Year",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Meeting"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "meeting_date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "Meeting.meeting_date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "meeting_date Month",
+              "queryRef": "Meeting.meeting_date",
+              "nativeQueryRef": "meeting_date",
               "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Meeting"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "meeting_date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Day"
-                }
-              },
-              "queryRef": "Meeting.meeting_date.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "meeting_date Day",
-              "active": false
             }
           ]
         },
@@ -155,6 +92,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Meeting"
+                  }
+                },
+                "Property": "meeting_date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -191,6 +146,34 @@
                   "Value": "false"
                 }
               }
+            },
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Categorical'"
+                }
+              }
+            },
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "48D"
+                }
+              }
             }
           }
         }
@@ -204,34 +187,21 @@
                   "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "showMarker": {
+            },
+            "gridlineAutoScale": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "markerColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#FF0000'"
-                    }
-                  }
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "Pricing Comparison.vol_v1_2"
           }
         }
       ],
@@ -252,6 +222,98 @@
           },
           "selector": {
             "metadata": "Pricing Comparison.vol_v1_2"
+          }
+        },
+        {
+          "properties": {
+            "fillTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "valueMin": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "valueSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "231.71297324627616D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "seriesOrderReversed": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "clusteredGapOverlaps": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "clusteredGapOverlapReverse": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "clusteredGapSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
           }
         }
       ]
@@ -287,7 +349,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Volume by time'"
+                  "Value": "'Volume by Time - Last 30 Days'"
                 }
               }
             }
@@ -300,7 +362,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "52d08fe9bda6f849c226",
+        "name": "cab356c7c40d3a9505f2",
         "field": {
           "Measure": {
             "Expression": {
@@ -314,7 +376,7 @@
         "type": "Advanced"
       },
       {
-        "name": "8312371f2125ae87bb54",
+        "name": "8a087faf0989870797e6",
         "field": {
           "Measure": {
             "Expression": {
@@ -328,7 +390,7 @@
         "type": "Advanced"
       },
       {
-        "name": "6737240d7c002513a98e",
+        "name": "dfbe704a11d1fda9b299",
         "field": {
           "Measure": {
             "Expression": {
@@ -342,7 +404,7 @@
         "type": "Advanced"
       },
       {
-        "name": "5fc2a71fb800f9c38b2a",
+        "name": "e51e5870b8f6c37caf25",
         "field": {
           "Measure": {
             "Expression": {
@@ -356,79 +418,74 @@
         "type": "Advanced"
       },
       {
-        "name": "41465eff166b28c33f13",
+        "name": "7aebc19caceb1c9482c6",
         "field": {
-          "HierarchyLevel": {
+          "Column": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Meeting"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "meeting_date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
+              "SourceRef": {
+                "Entity": "Meeting"
               }
             },
-            "Level": "Year"
+            "Property": "meeting_date"
           }
         },
-        "type": "Advanced"
-      },
-      {
-        "name": "f4e47052176d5cdc821b",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Meeting"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "meeting_date"
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Meeting",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Between": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "meeting_date"
+                    }
+                  },
+                  "LowerBound": {
+                    "DateSpan": {
+                      "Expression": {
+                        "DateAdd": {
+                          "Expression": {
+                            "DateAdd": {
+                              "Expression": {
+                                "Now": {}
+                              },
+                              "Amount": 1,
+                              "TimeUnit": 0
+                            }
+                          },
+                          "Amount": -30,
+                          "TimeUnit": 0
+                        }
+                      },
+                      "TimeUnit": 0
+                    }
+                  },
+                  "UpperBound": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 0
+                    }
                   }
-                },
-                "Hierarchy": "Date Hierarchy"
+                }
               }
-            },
-            "Level": "Month"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "753a804ac6350a1a6642",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Meeting"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "meeting_date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
-              }
-            },
-            "Level": "Day"
-          }
-        },
-        "type": "Advanced"
+            }
+          ]
+        }
       }
     ]
   }
